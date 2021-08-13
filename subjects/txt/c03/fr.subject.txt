@@ -1,0 +1,116 @@
+  Piscine C C 03
+Résumé: Ce document est le sujet du module C 03 de la piscine C de 42.
+
+ Table des matières
+I Consignes
+II Préambule
+III Exercice 00 : ft_strcmp
+IV Exercice 01 : ft_strncmp
+V Exercice 02 : ft_strcat
+VI Exercice 03 : ft_strncat
+VII Exercice 04 : ft_strstr
+VIII Exercice 05 : ft_strlcat
+2 4 5 6 7 8 9
+10
+1
+
+ Chapitre I Consignes
+• Seule cette page servira de référence : ne vous fiez pas aux bruits de couloir.
+• Relisez bien le sujet avant de rendre vos exercices. A tout moment le sujet peut
+changer.
+• Attention aux droits de vos fichiers et de vos répertoires.
+• Vous devez suivre la procédure de rendu pour tous vos exercices.
+• Vos exercices seront corrigés par vos camarades de piscine.
+• En plus de vos camarades, vous serez corrigés par un programme appelé la Mou- linette.
+• La Moulinette est très stricte dans sa notation. Elle est totalement automatisée. Il est impossible de discuter de sa note avec elle. Soyez d’une rigueur irréprochable pour éviter les surprises.
+• La Moulinette n’est pas très ouverte d’esprit. Elle ne cherche pas à comprendre le code qui ne respecte pas la Norme. La Moulinette utilise le programme norminette pour vérifier la norme de vos fichiers. Comprendre par là qu’il est stupide de rendre un code qui ne passe pas la norminette.
+• Les exercices sont très précisément ordonnés du plus simple au plus complexe. En aucun cas nous ne porterons attention ni ne prendrons en compte un exercice complexe si un exercice plus simple n’est pas parfaitement réussi.
+• L’utilisation d’une fonction interdite est un cas de triche. Toute triche est sanc- tionnée par la note de -42.
+• Vousnedevrezrendreunefonctionmain()quesinousvousdemandonsunprogramme.
+• La Moulinette compile avec les flags -Wall -Wextra -Werror, et utilise gcc.
+• Si votre programme ne compile pas, vous aurez 0.
+• Vous ne devez laisser dans votre répertoire aucun autre fichier que ceux explicite- ment specifiés par les énoncés des exercices.
+• Vous avez une question ? Demandez à votre voisin de droite. Sinon, essayez avec 2
+    
+ Piscine C C 03
+ votre voisin de gauche.
+• Votre manuel de référence s’appelle Google / man / Internet / ....
+• Pensez à discuter sur le forum Piscine de votre Intra, ainsi que sur le slack de votre Piscine !
+• Lisez attentivement les exemples. Ils pourraient bien requérir des choses qui ne sont pas autrement précisées dans le sujet...
+• Réfléchissez. Par pitié, par Odin ! Nom d’une pipe.
+  Pour cette journée, la norminette doit être lancée avec le flag -R CheckForbiddenSourceHeader. La moulinette l’utilisera aussi.
+  3
+
+ Chapitre II Préambule
+Le livre Wuzazu contient la première mention connue du jeu "Papier-Caillou-Ciseau". Il a été écrit par l’écrivain de la dynastie Ming Xie Zhaozhi, qui indique alors que ce jeu date de la dynastie Han (206 BC - 220 AD). Dans le livre, le jeu s’appellait shoushiling. Le livre Note of Liuyanzhai mentionne également le jeu, l’appelant shoushiling, huozhitou, or huoquan.
+Au travers de l’histoire japonaise, nous retrouverons des reférences fréquentes au jeux "sansukumi-ken", "ken" signifiant jeu de poing, avec une impasse "sukumi" à trois voies "san". C’est à lire dans le sens A bat B, B bat C et C bat A. Ce jeu est originaire de Chine avant d’être importé au Japon et de devenir populaire.
+Au début du 20ème siècle, papier caillou ciseaux s’est répandu au delà de l’Asie, no- tamment grâce au contact augmenté entre le Jpaon et l’Ouest. Son nom anglais est alors pris par traduction du nom japonais des gestes utilisés. Dans le reste de l’Asie, le papier est remplacé par tissu. La forme des ciseaux est également adoptée du style japonais.
+En 1927, "La vie au patronage", un magazine pour en enfants en France, le décrivait en détail, et le considérant comme un "jeu japonais" Son nom français alternatif ("chi- fou-mi"), est basé sur les anciens mots japonais pour "un, deux, trois" ("hi, fu, mi").
+Un article du New York Times de 1932 explique les règles pour les lecteurs améri- cains, indiquant que le jeu n’était alors pas très répandu. L’édition de 1933 du magazine "Compton’s Pictured Encyclopedia" le décrivait comme un moyen commun de résolution des conflits entre enfants lors de son article sur le Japon : "This is such a good way of deciding an argument that American boys and girls might like to practice it too.”
+4
+
+ Chapitre III
+Exercice 00 : ft_strcmp
+• Reproduire à l’identique le fonctionnement de la fonction strcmp (man strcmp). • Elle devra être prototypée de la façon suivante :
+     Exercice : 00
+  ft_strcmp
+  Dossier de rendu : ex00/
+  Fichiers à rendre : ft_strcmp.c
+  Fonctions Autorisées : Aucune
+      int ft_strcmp(char *s1, char *s2);
+5
+
+ Chapitre IV
+Exercice 01 : ft_strncmp
+• Reproduire à l’identique le fonctionnement de la fonction strncmp (man strncmp). • Elle devra être prototypée de la façon suivante :
+     Exercice : 01
+  ft_strncmp
+  Dossier de rendu : ex01/
+  Fichiers à rendre : ft_strncmp.c
+  Fonctions Autorisées : Aucune
+      int ft_strncmp(char *s1, char *s2, unsigned int n);
+6
+
+ Chapitre V
+Exercice 02 : ft_strcat
+• Reproduire à l’identique le fonctionnement de la fonction strcat (man strcat). • Elle devra être prototypée de la façon suivante :
+     Exercice : 02
+  ft_strcat
+  Dossier de rendu : ex02/
+  Fichiers à rendre : ft_strcat.c
+  Fonctions Autorisées : Aucune
+      char *ft_strcat(char *dest, char *src);
+7
+
+ Chapitre VI
+Exercice 03 : ft_strncat
+• Reproduire à l’identique le fonctionnement de la fonction strncat (man strncat). • Elle devra être prototypée de la façon suivante :
+     Exercice : 03
+  ft_strncat
+  Dossier de rendu : ex03/
+  Fichiers à rendre : ft_strncat.c
+  Fonctions Autorisées : Aucune
+      char *ft_strncat(char *dest, char *src, unsigned int nb);
+8
+
+ Chapitre VII
+Exercice 04 : ft_strstr
+• Reproduire à l’identique le fonctionnement de la fonction strstr (man strstr). • Elle devra être prototypée de la façon suivante :
+     Exercice : 04
+  ft_strstr
+  Dossier de rendu : ex04/
+  Fichiers à rendre : ft_strstr.c
+  Fonctions Autorisées : Aucune
+      char *ft_strstr(char *str, char *to_find);
+9
+
+ Chapitre VIII
+Exercice 05 : ft_strlcat
+• Reproduire à l’identique le fonctionnement de la fonction strlcat (man strlcat). • Elle devra être prototypée de la façon suivante :
+     Exercice : 05
+  ft_strlcat
+  Dossier de rendu : ex05/
+  Fichiers à rendre : ft_strlcat.c
+  Fonctions Autorisées : Aucune
+      unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
+10
