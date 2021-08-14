@@ -6,7 +6,7 @@
 #    By: hcoutaud <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 16:12:25 by hcoutaud          #+#    #+#              #
-#    Updated: 2021/08/14 12:10:15 by hcoutaud         ###   ########.fr        #
+#    Updated: 2021/08/14 12:24:36 by hcoutaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -204,7 +204,7 @@ while IFS= read -r line; do
     if [[ $line =~ "Dossier de rendu :" ]]; then
         dossier=$(echo $line | awk -F " : " '{print $2}' | sed 's/ //g' | sed 's/\/*$//')
         if [ ! -e "${dest42exo}/${dossier}" ]; then
-            echo "${RED}Folder ${dossier}/ seems to be missing (${UNDERLINE}${BOLD}double check${NC}${RED})${NC}"
+            echo "Folder ${RED}${dossier}/${NC} seems to be missing (${UNDERLINE}${BOLD}double check${NC})"
 			echo ""
         else
 			exercises="${exercises} ${dossier}"
@@ -226,27 +226,27 @@ while IFS= read -r line; do
 			
             # Create/Check files (ft_*.c, main.c)
             if [ ! -e "${dest42exo}/${dossier}/${fichier}" ]; then
-				echo "\t${RED}•${NC} The file ${ITALIC}${fichier}${NS} seems to be missing (${UNDERLINE}${BOLD}double check${NC})"
+				echo "\t${RED}•${NC} The file ${ITALIC}${RED}${fichier}${NC} seems to be missing (${UNDERLINE}${BOLD}double check${NC})"
 			else
-				echo "\t${GREEN}•${NC} The file ${ITALIC}${fichier}${NS}${GREEN} is present"
+				echo "\t${GREEN}•${NC} The file ${ITALIC}${GREEN}${fichier}${NC} is present"
 			fi
 			
 			# Copy main file for the exercise (Create with default sample if not known in db)
 			if [ ! -e "${dest42exo}/${dossier}/main.c" ]; then
 				if [ -e "${dest43corr}/main/${subject}/${dossier}/main.c" ]; then
 					cp "${dest43corr}/main/${subject}/${dossier}/main.c" "${dest42exo}/${dossier}"
-					echo "\t${GREEN}•${NC} Added a ${ITALIC}main.c${NC} file adapted for ${ITALIC}${fichier}${NC}"
+					echo "\t${GREEN}•${NC} Added a ${GREEN}${ITALIC}main.c${NC} file adapted for ${ITALIC}${fichier}${NC}"
 				# Or create a generic one if none is available
 				else
 					rm "${dest42exo}/${dossier}/main.c"
 					touch "${dest42exo}/${dossier}/main.c"
 					fill_main "${dest42exo}/${dossier}/main.c" "${proto}"
 					fichier_nom=$(echo $(echo ${fichier} | sed 's/.c//'))
-					echo "\t${GREEN}•${NC} Generated a basic ${ITALIC}main.c${NC} file, because no ${ITALIC}${fichier_nom}${NC}-specific"
+					echo "\t${GREEN}•${NC} Generated a basic ${ITALIC}${GREEN}main.c${NC} file, because no ${ITALIC}${fichier_nom}${NC}-specific"
 					echo "\t   main.c is yet available (check on github for updates)"
 				fi
 			else
-				echo "\t${GREEN}•${NC} One ${ITALIC}main.c${NC} file already exists for this exercise"
+				echo "\t${GREEN}•${NC} One ${ITALIC}${GREEN}main.c${NC} file already exists for this exercise"
 			fi
 		fi
         echo ""
