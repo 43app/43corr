@@ -1,116 +1,214 @@
-  Piscine C C 03
-Résumé: Ce document est le sujet du module C 03 de la piscine C de 42.
+Piscine C
+C 03
 
- Table des matières
-I Consignes
-II Préambule
-III Exercice 00 : ft_strcmp
-IV Exercice 01 : ft_strncmp
-V Exercice 02 : ft_strcat
-VI Exercice 03 : ft_strncat
-VII Exercice 04 : ft_strstr
-VIII Exercice 05 : ft_strlcat
-2 4 5 6 7 8 9
-10
-1
+R√©sum√©: Ce document est le sujet du module C 03 de la piscine C de 42.
 
- Chapitre I Consignes
-• Seule cette page servira de référence : ne vous fiez pas aux bruits de couloir.
-• Relisez bien le sujet avant de rendre vos exercices. A tout moment le sujet peut
-changer.
-• Attention aux droits de vos fichiers et de vos répertoires.
-• Vous devez suivre la procédure de rendu pour tous vos exercices.
-• Vos exercices seront corrigés par vos camarades de piscine.
-• En plus de vos camarades, vous serez corrigés par un programme appelé la Mou- linette.
-• La Moulinette est très stricte dans sa notation. Elle est totalement automatisée. Il est impossible de discuter de sa note avec elle. Soyez d’une rigueur irréprochable pour éviter les surprises.
-• La Moulinette n’est pas très ouverte d’esprit. Elle ne cherche pas à comprendre le code qui ne respecte pas la Norme. La Moulinette utilise le programme norminette pour vérifier la norme de vos fichiers. Comprendre par là qu’il est stupide de rendre un code qui ne passe pas la norminette.
-• Les exercices sont très précisément ordonnés du plus simple au plus complexe. En aucun cas nous ne porterons attention ni ne prendrons en compte un exercice complexe si un exercice plus simple n’est pas parfaitement réussi.
-• L’utilisation d’une fonction interdite est un cas de triche. Toute triche est sanc- tionnée par la note de -42.
-• Vousnedevrezrendreunefonctionmain()quesinousvousdemandonsunprogramme.
-• La Moulinette compile avec les flags -Wall -Wextra -Werror, et utilise gcc.
-• Si votre programme ne compile pas, vous aurez 0.
-• Vous ne devez laisser dans votre répertoire aucun autre fichier que ceux explicite- ment specifiés par les énoncés des exercices.
-• Vous avez une question ? Demandez à votre voisin de droite. Sinon, essayez avec 2
-    
- Piscine C C 03
- votre voisin de gauche.
-• Votre manuel de référence s’appelle Google / man / Internet / ....
-• Pensez à discuter sur le forum Piscine de votre Intra, ainsi que sur le slack de votre Piscine !
-• Lisez attentivement les exemples. Ils pourraient bien requérir des choses qui ne sont pas autrement précisées dans le sujet...
-• Réfléchissez. Par pitié, par Odin ! Nom d’une pipe.
-  Pour cette journée, la norminette doit être lancée avec le flag -R CheckForbiddenSourceHeader. La moulinette l’utilisera aussi.
-  3
+Table des mati√®res
+I
 
- Chapitre II Préambule
-Le livre Wuzazu contient la première mention connue du jeu "Papier-Caillou-Ciseau". Il a été écrit par l’écrivain de la dynastie Ming Xie Zhaozhi, qui indique alors que ce jeu date de la dynastie Han (206 BC - 220 AD). Dans le livre, le jeu s’appellait shoushiling. Le livre Note of Liuyanzhai mentionne également le jeu, l’appelant shoushiling, huozhitou, or huoquan.
-Au travers de l’histoire japonaise, nous retrouverons des reférences fréquentes au jeux "sansukumi-ken", "ken" signifiant jeu de poing, avec une impasse "sukumi" à trois voies "san". C’est à lire dans le sens A bat B, B bat C et C bat A. Ce jeu est originaire de Chine avant d’être importé au Japon et de devenir populaire.
-Au début du 20ème siècle, papier caillou ciseaux s’est répandu au delà de l’Asie, no- tamment grâce au contact augmenté entre le Jpaon et l’Ouest. Son nom anglais est alors pris par traduction du nom japonais des gestes utilisés. Dans le reste de l’Asie, le papier est remplacé par tissu. La forme des ciseaux est également adoptée du style japonais.
-En 1927, "La vie au patronage", un magazine pour en enfants en France, le décrivait en détail, et le considérant comme un "jeu japonais" Son nom français alternatif ("chi- fou-mi"), est basé sur les anciens mots japonais pour "un, deux, trois" ("hi, fu, mi").
-Un article du New York Times de 1932 explique les règles pour les lecteurs améri- cains, indiquant que le jeu n’était alors pas très répandu. L’édition de 1933 du magazine "Compton’s Pictured Encyclopedia" le décrivait comme un moyen commun de résolution des conflits entre enfants lors de son article sur le Japon : "This is such a good way of deciding an argument that American boys and girls might like to practice it too.”
+Consignes
+
+2
+
+II
+
+Pr√©ambule
+
 4
 
- Chapitre III
+III
+
 Exercice 00 : ft_strcmp
-• Reproduire à l’identique le fonctionnement de la fonction strcmp (man strcmp). • Elle devra être prototypée de la façon suivante :
-     Exercice : 00
-  ft_strcmp
-  Dossier de rendu : ex00/
-  Fichiers à rendre : ft_strcmp.c
-  Fonctions Autorisées : Aucune
-      int ft_strcmp(char *s1, char *s2);
+
 5
 
- Chapitre IV
+IV
+
 Exercice 01 : ft_strncmp
-• Reproduire à l’identique le fonctionnement de la fonction strncmp (man strncmp). • Elle devra être prototypée de la façon suivante :
-     Exercice : 01
-  ft_strncmp
-  Dossier de rendu : ex01/
-  Fichiers à rendre : ft_strncmp.c
-  Fonctions Autorisées : Aucune
-      int ft_strncmp(char *s1, char *s2, unsigned int n);
+
 6
 
- Chapitre V
+V
+
 Exercice 02 : ft_strcat
-• Reproduire à l’identique le fonctionnement de la fonction strcat (man strcat). • Elle devra être prototypée de la façon suivante :
-     Exercice : 02
-  ft_strcat
-  Dossier de rendu : ex02/
-  Fichiers à rendre : ft_strcat.c
-  Fonctions Autorisées : Aucune
-      char *ft_strcat(char *dest, char *src);
+
 7
 
- Chapitre VI
+VI
+
 Exercice 03 : ft_strncat
-• Reproduire à l’identique le fonctionnement de la fonction strncat (man strncat). • Elle devra être prototypée de la façon suivante :
-     Exercice : 03
-  ft_strncat
-  Dossier de rendu : ex03/
-  Fichiers à rendre : ft_strncat.c
-  Fonctions Autorisées : Aucune
-      char *ft_strncat(char *dest, char *src, unsigned int nb);
+
 8
 
- Chapitre VII
+VII
+
 Exercice 04 : ft_strstr
-• Reproduire à l’identique le fonctionnement de la fonction strstr (man strstr). • Elle devra être prototypée de la façon suivante :
-     Exercice : 04
-  ft_strstr
-  Dossier de rendu : ex04/
-  Fichiers à rendre : ft_strstr.c
-  Fonctions Autorisées : Aucune
-      char *ft_strstr(char *str, char *to_find);
+
 9
 
- Chapitre VIII
+VIII
+
 Exercice 05 : ft_strlcat
-• Reproduire à l’identique le fonctionnement de la fonction strlcat (man strlcat). • Elle devra être prototypée de la façon suivante :
-     Exercice : 05
-  ft_strlcat
-  Dossier de rendu : ex05/
-  Fichiers à rendre : ft_strlcat.c
-  Fonctions Autorisées : Aucune
-      unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
+
 10
+
+1
+
+Chapitre I
+Consignes
+‚Ä¢ Seule cette page servira de r√©f√©rence : ne vous fiez pas aux bruits de couloir.
+‚Ä¢ Relisez bien le sujet avant de rendre vos exercices. A tout moment le sujet peut
+changer.
+‚Ä¢ Attention aux droits de vos fichiers et de vos r√©pertoires.
+‚Ä¢ Vous devez suivre la proc√©dure de rendu pour tous vos exercices.
+‚Ä¢ Vos exercices seront corrig√©s par vos camarades de piscine.
+‚Ä¢ En plus de vos camarades, vous serez corrig√©s par un programme appel√© la Moulinette.
+‚Ä¢ La Moulinette est tr√®s stricte dans sa notation. Elle est totalement automatis√©e. Il
+est impossible de discuter de sa note avec elle. Soyez d‚Äôune rigueur irr√©prochable
+pour √©viter les surprises.
+‚Ä¢ La Moulinette n‚Äôest pas tr√®s ouverte d‚Äôesprit. Elle ne cherche pas √† comprendre le
+code qui ne respecte pas la Norme. La Moulinette utilise le programme norminette
+pour v√©rifier la norme de vos fichiers. Comprendre par l√† qu‚Äôil est stupide de rendre
+un code qui ne passe pas la norminette.
+‚Ä¢ Les exercices sont tr√®s pr√©cis√©ment ordonn√©s du plus simple au plus complexe.
+En aucun cas nous ne porterons attention ni ne prendrons en compte un exercice
+complexe si un exercice plus simple n‚Äôest pas parfaitement r√©ussi.
+‚Ä¢ L‚Äôutilisation d‚Äôune fonction interdite est un cas de triche. Toute triche est sanctionn√©e par la note de -42.
+‚Ä¢ Vous ne devrez rendre une fonction main() que si nous vous demandons un programme.
+‚Ä¢ La Moulinette compile avec les flags -Wall -Wextra -Werror, et utilise gcc.
+‚Ä¢ Si votre programme ne compile pas, vous aurez 0.
+‚Ä¢ Vous ne devez laisser dans votre r√©pertoire aucun autre fichier que ceux explicitement specifi√©s par les √©nonc√©s des exercices.
+‚Ä¢ Vous avez une question ? Demandez √† votre voisin de droite. Sinon, essayez avec
+2
+
+Piscine C
+
+C 03
+
+votre voisin de gauche.
+‚Ä¢ Votre manuel de r√©f√©rence s‚Äôappelle Google / man / Internet / ....
+‚Ä¢ Pensez √† discuter sur le forum Piscine de votre Intra, ainsi que sur le slack de votre
+Piscine !
+‚Ä¢ Lisez attentivement les exemples. Ils pourraient bien requ√©rir des choses qui ne
+sont pas autrement pr√©cis√©es dans le sujet...
+‚Ä¢ R√©fl√©chissez. Par piti√©, par Odin ! Nom d‚Äôune pipe.
+
+Pour cette journ√©e, la norminette doit √™tre lanc√©e avec le flag -R
+CheckForbiddenSourceHeader. La moulinette l‚Äôutilisera aussi.
+
+3
+
+Chapitre II
+Pr√©ambule
+Le livre Wuzazu contient la premi√®re mention connue du jeu "Papier-Caillou-Ciseau".
+Il a √©t√© √©crit par l‚Äô√©crivain de la dynastie Ming Xie Zhaozhi, qui indique alors que ce jeu
+date de la dynastie Han (206 BC - 220 AD). Dans le livre, le jeu s‚Äôappellait shoushiling. Le
+livre Note of Liuyanzhai mentionne √©galement le jeu, l‚Äôappelant shoushiling, huozhitou,
+or huoquan.
+Au travers de l‚Äôhistoire japonaise, nous retrouverons des ref√©rences fr√©quentes au jeux
+"sansukumi-ken", "ken" signifiant jeu de poing, avec une impasse "sukumi" √† trois voies
+"san". C‚Äôest √† lire dans le sens A bat B, B bat C et C bat A. Ce jeu est originaire de
+Chine avant d‚Äô√™tre import√© au Japon et de devenir populaire.
+Au d√©but du 20√®me si√®cle, papier caillou ciseaux s‚Äôest r√©pandu au del√† de l‚ÄôAsie, notamment gr√¢ce au contact augment√© entre le Jpaon et l‚ÄôOuest. Son nom anglais est alors
+pris par traduction du nom japonais des gestes utilis√©s. Dans le reste de l‚ÄôAsie, le papier
+est remplac√© par tissu. La forme des ciseaux est √©galement adopt√©e du style japonais.
+En 1927, "La vie au patronage", un magazine pour en enfants en France, le d√©crivait
+en d√©tail, et le consid√©rant comme un "jeu japonais" Son nom fran√ßais alternatif ("chifou-mi"), est bas√© sur les anciens mots japonais pour "un, deux, trois" ("hi, fu, mi").
+Un article du New York Times de 1932 explique les r√®gles pour les lecteurs am√©ricains, indiquant que le jeu n‚Äô√©tait alors pas tr√®s r√©pandu. L‚Äô√©dition de 1933 du magazine
+"Compton‚Äôs Pictured Encyclopedia" le d√©crivait comme un moyen commun de r√©solution
+des conflits entre enfants lors de son article sur le Japon : "This is such a good way of
+deciding an argument that American boys and girls might like to practice it too.‚Äù
+
+4
+
+Chapitre III
+Exercice 00 : ft_strcmp
+Exercice : 00
+ft_strcmp
+Dossier de rendu : ex00/
+Fichiers √† rendre : ft_strcmp.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strcmp (man strcmp).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+int
+
+ft_strcmp(char *s1, char *s2);
+
+5
+
+Chapitre IV
+Exercice 01 : ft_strncmp
+Exercice : 01
+ft_strncmp
+Dossier de rendu : ex01/
+Fichiers √† rendre : ft_strncmp.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strncmp (man strncmp).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+int
+
+ft_strncmp(char *s1, char *s2, unsigned int n);
+
+6
+
+Chapitre V
+Exercice 02 : ft_strcat
+Exercice : 02
+ft_strcat
+Dossier de rendu : ex02/
+Fichiers √† rendre : ft_strcat.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strcat (man strcat).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+char *ft_strcat(char *dest, char *src);
+
+7
+
+Chapitre VI
+Exercice 03 : ft_strncat
+Exercice : 03
+ft_strncat
+Dossier de rendu : ex03/
+Fichiers √† rendre : ft_strncat.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strncat (man strncat).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+char *ft_strncat(char *dest, char *src, unsigned int nb);
+
+8
+
+Chapitre VII
+Exercice 04 : ft_strstr
+Exercice : 04
+ft_strstr
+Dossier de rendu : ex04/
+Fichiers √† rendre : ft_strstr.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strstr (man strstr).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+char
+
+*ft_strstr(char *str, char *to_find);
+
+9
+
+Chapitre VIII
+Exercice 05 : ft_strlcat
+Exercice : 05
+ft_strlcat
+Dossier de rendu : ex05/
+Fichiers √† rendre : ft_strlcat.c
+Fonctions Autoris√©es : Aucune
+
+‚Ä¢ Reproduire √† l‚Äôidentique le fonctionnement de la fonction strlcat (man strlcat).
+‚Ä¢ Elle devra √™tre prototyp√©e de la fa√ßon suivante :
+unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
+
+10
+
+
