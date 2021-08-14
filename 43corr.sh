@@ -6,7 +6,7 @@
 #    By: hcoutaud <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 16:12:25 by hcoutaud          #+#    #+#              #
-#    Updated: 2021/08/13 12:22:10 by hcoutaud         ###   ########.fr        #
+#    Updated: 2021/08/14 11:07:30 by hcoutaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -30,11 +30,13 @@ YELLOW='\033[1;49;33m'
 
 ITALIC='\033[3m'
 BOLD='\033[1m'
+UNDERLINE='\033[4m'
 
 
 # ===== FUNCTIONS =====
 usage(){ 
     echo "Usage: ./42racing.sh [options] subject"
+	echo ""
 	echo "Options :"
 	echo "-h : Print this help text"
 	echo "-a : Print all subjects currently available to use the program onto"
@@ -49,25 +51,8 @@ usage(){
 function current_available()
 {
 	echo "Currently, you can evaluate with this program the following subjects :"
-	echo ">> ${subjects} <<"
+	echo ">> ${BOLD}${subjects}${NC} <<"
 	echo ""
-}
-
-function fill_main()
-{
-	# mainpath must end with "main.c"
-	mainpath=$1
-	proto=$2
-	echo "#include <stdio.h>"	>> $mainpath
-	echo "#include <unistd.h>"
-	echo "#include <string.h>"
-	echo ""
-	echo "${proto}"
-	echo ""
-	echo "int main()"
-	echo "{"
-	echo "\t"
-	echo "}"
 }
 
 # GETOPTS
@@ -112,7 +97,7 @@ echo "You, and only you, can assess properly the work of another"
 echo "This is only setup program, NOT an automated evaluation program"
 echo "Report any bug to ${adminlogin} on slack"
 echo ""
-read -rn 1 -p "Would you like to continue ? (y/[n]) "
+read -p "Would you like to continue ? (y/[n]) "
 printf -- '%s\n' ""
 case "${REPLY}" in
     ([yY]) 
@@ -183,6 +168,23 @@ rm -rf 42header_emacs
 #	fi
 #done < "${path}"
 
+function fill_main()
+{
+    # mainpath must end with "main.c"
+    mainpath=$1
+    proto=$2
+    echo "#include <stdio.h>"   >> $mainpath
+    echo "#include <unistd.h>"	>> $mainpath 
+    echo "#include <string.h>"	>> $mainpath
+    echo ""						>> $mainpath
+    echo "${proto}f"				>> $mainpath
+    echo ""						>> $mainpath
+    echo "int main()"			>> $mainpath
+    echo "{"					>> $mainpath
+    echo "\t"					>> $mainpath
+    echo "}"					>> $mainpath
+}
+
 echo " ===== Setting up your environment to evaluate Piscine ${subject} ====="
 # Put pdf in current directory (user friendly program ;p)
 echo "Putting pdf subject in current directory, and opening it !"
@@ -195,14 +197,11 @@ exercises=""
 fichiers=""
 
 # Analyse folder from subject (Create/Check files and folders)
-while IFS= read -r line; do
-	
-    if [[ $line == *"Dossier de rendu :"* ]]; then
+while IFS= read -r line; do	
+    if [[ $line =~ "Dossier de rendu :" ]]; then
         dossier=$(echo $line | awk -F " : " '{print $2}' | sed 's/ //g' | sed 's/\/*$//')
-		
-		cd "${dest42exo}"
-        if [ ! -e $dossier ]; then
-            echo "${RED}Folder ${dossier}/ seems to be missing, please double-check its existence${NC}"
+        if [ ! -e "${dest42exo}/${dossier}" ]; then
+            echo "${RED}Folder ${dossier}/ seems to be missing (${UNDERLINE}${BOLD}double check${NC}${RED})${NC}"
 			echo ""
         else
 			exercises="${exercises} ${dossier}"
@@ -214,35 +213,36 @@ while IFS= read -r line; do
             proto=$(echo $line | sed 's/^ *//g')
 			
 			echo "Entering ${BOLD}${dossier}${NC}"
-            cd "${dest42exo}/${dossier}"
 			
             # Create/Check files (ft_*.c, main.c)
-            if [ ! -e "${fichier}" ]; then
-				echo "${RED}\tThe file ${ITALIC}${fichier}${NS} seems t${RED}o be missing, please double-check its existence${NC}"
+            if [ ! -e "${dest42exo}/${dossier}/${fichier}" ]; then
+				echo "${RED}\tThe file ${ITALIC}${fichier}${NS} seems t${RED}o be missing (${UNDERLINE}${BOLD}double check${NC}${RED})${NC}"
 			else
 				echo "${GREEN}\tThe file ${ITALIC}${fichier}${NS}${GREEN} is present${NC}"
 			fi
-			# Bother about any main.c if none already exists
-			if [ -e "${dest42exo}/${dossier}/main.c" ]; then
-				# Copy main file for the exercise (Create with default sample if not known in db)
+			
+			# Copy main file for the exercise (Create with default sample if not known in db)
+			if [ ! -e "${dest42exo}/${dossier}/main.c" ]; then
 				if [ -e "${dest43corr}/main/${subject}/${dossier}/main.c" ]; then
-					cp "${dest43corr}/main/${subject}/${dossier}/main.c" .
+					cp "${dest43corr}/main/${subject}/${dossier}/main.c" "${dest42exo}/${dossier}"
 					echo "\tAdded a ${ITALIC}main.c${NC} file adapted for ${ITALIC}${fichier}${NC}"
+			# Or create a generic one if none is available
 				else
+					rm "${dest42exo}/${dossier}/main.c"
 					touch "${dest42exo}/${dossier}/main.c"
 					fill_main "${dest42exo}/${dossier}/main.c" ${proto}
-					echo "\tGenerated a basic ${ITALIC}main.c${NC} file, because no ${ITALIC}${fichier}${NC}-specific"
+					fichier_nom=$(echo $(echo ${fichier} | sed 's/.c//'))
+					echo "\tGenerated a basic ${ITALIC}main.c${NC} file, because no ${ITALIC}${fichier_nom}${NC}-specific"
 					echo "\tmain.c is yet available (check on github for updates)"
 				fi
+			else
+				echo "\tOne ${ITALIC}main.c${NC} file already exists for this exercise"
 			fi
-            cd "${dest42exo}"
-            echo ""
-        fi
+		fi
+        echo ""
     fi
 done < "${txt}"
 
-# Clearing the current folder
-#rm -rf subjects
 
 # Norminette check
 echo "================================================================"
@@ -251,6 +251,20 @@ echo "Checking with '${YELLOW}norminette${NC} -R CheckForbiddenSourceHeader' :"
 echo ""
 find "${dest42exo}" -type f -name 'ft_*.c' -exec norminette -R CheckForbiddenSourceHeader {} \;
 echo ""
+
+# Checking for hidden files
+echo "================================================================"
+echo ""
+echo "Searching for hidden files :"
+echo ""
+lines=$(find "${dest42exo}" -type d \( -path "${dest42exo}/.git" -o -path "${dest42exo}/43corr" \) -prune -false -o -type f \( -name '.*' -a ! -name '.gitignore' \))
+nlines=$(echo $lines | wc -l)
+if [ $nlines -eq 0 ]; then
+	echo "${GREEN}No hidden files ;D${NC}"
+else
+	echo "${RED}$lines${NC}"
+fi
+echo""
 
 # Initializing the first exercise to evaluate
 exercises_len=$(echo $(echo ${exercises} | awk -F ' ' '{print NF; exit}'))
@@ -314,7 +328,7 @@ while [ 1 ]; do
 	elif [[ $command = "compile" || $command = "c" ]]; then
 		gcc -Wall -Werror -Wextra -o "${dest42exo}/${current_ex}/compile43corr.out" "${dest42exo}/${current_ex}/${file}" "${dest42exo}/${current_ex}/main.c" > "${dest42exo}/${current_ex}/compile43corr.log" 2>&1
 		error=""
-		message="log file created at \"${current_ex}/\""
+		message="log file created at \"${current_ex}/\" (type ${ITALIC}l${NC} to see)"
 	elif [[ $command = "run" || $command = "r" ]]; then
 		if [ ! -e "${dest42exo}/${current_ex}/compile43corr.out" ]; then
 			error="Compile first"
@@ -342,7 +356,7 @@ while [ 1 ]; do
         error=""
         message=""
 	elif [[ $command = "quit" || $command = "q" ]]; then
-		break
+		break > /dev/null 2>&1
 	elif [[ $command = "" ]]; then
 		error=""
 		message=""
