@@ -6,7 +6,7 @@
 #    By: hcoutaud <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/08/11 16:12:25 by hcoutaud          #+#    #+#              #
-#    Updated: 2021/08/14 11:31:39 by hcoutaud         ###   ########.fr        #
+#    Updated: 2021/08/14 12:10:15 by hcoutaud         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 #!/bin/bash
@@ -179,7 +179,7 @@ function fill_main()
     echo "#include <unistd.h>"	>> $mainpath 
     echo "#include <string.h>"	>> $mainpath
     echo ""						>> $mainpath
-    echo "${proto}f"				>> $mainpath
+    echo "$proto"				>> $mainpath
     echo ""						>> $mainpath
     echo "int main()"			>> $mainpath
     echo "{"					>> $mainpath
@@ -211,10 +211,17 @@ while IFS= read -r line; do
             read -r line
             fichier=$(echo $line | awk -F " : " '{print $2}' | sed 's/ //g')
 			fichiers="${fichiers} ${fichier}"
-            read -r line
-            read -r line
-            proto=$(echo $line | sed 's/^ *//g')
+			fichier_noc=$(echo $fichier | sed 's/.c//')
+			read -r line
+            while ! [[ "$line" =~ "Elle devra être prototypée de la façon suivante :" ]]; do
+				read -r line
+			done
+			read -r type
+			read -r line
+			read -r fct
+			proto="${type} ${fct}"
 			
+
  			echo "Entering ${BOLD}${dossier}${NC}"
 			
             # Create/Check files (ft_*.c, main.c)
@@ -229,11 +236,11 @@ while IFS= read -r line; do
 				if [ -e "${dest43corr}/main/${subject}/${dossier}/main.c" ]; then
 					cp "${dest43corr}/main/${subject}/${dossier}/main.c" "${dest42exo}/${dossier}"
 					echo "\t${GREEN}•${NC} Added a ${ITALIC}main.c${NC} file adapted for ${ITALIC}${fichier}${NC}"
-			# Or create a generic one if none is available
+				# Or create a generic one if none is available
 				else
 					rm "${dest42exo}/${dossier}/main.c"
 					touch "${dest42exo}/${dossier}/main.c"
-					fill_main "${dest42exo}/${dossier}/main.c" ${proto}
+					fill_main "${dest42exo}/${dossier}/main.c" "${proto}"
 					fichier_nom=$(echo $(echo ${fichier} | sed 's/.c//'))
 					echo "\t${GREEN}•${NC} Generated a basic ${ITALIC}main.c${NC} file, because no ${ITALIC}${fichier_nom}${NC}-specific"
 					echo "\t   main.c is yet available (check on github for updates)"
