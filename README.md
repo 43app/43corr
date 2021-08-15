@@ -88,7 +88,7 @@ git clone https://github.com/43app/43corr.git
 ![Alt text](/pics/programcli.png?raw=true "The command line of the program")
 
 
-_To see a detailed version of the features of this program, see <a href="#features">Features</q>_
+_To see a detailed version of the features of this program, see <a href="#features">Features</a>_
 
 
 
