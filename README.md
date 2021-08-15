@@ -83,7 +83,7 @@ git clone https://github.com/43app/43corr.git
 ./43corr.sh c03
 ```
 
-4. **Enjoy**
+4. Type your commands in the embedded command line (_type `h` for a list of commands_)
 
 ![Alt text](/pics/programcli.png?raw=true "The command line of the program")
 
