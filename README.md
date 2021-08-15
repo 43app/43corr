@@ -54,13 +54,6 @@
     <li>
       <a href="#about-the-project">About The Project</a>
     </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-<!--        <li><a href="#prerequisites">Prerequisites</a></li>-->
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
     <li><a href="#usage">Usage</a></li>
     <li><a href="#roadmap">Roadmap</a></li>
     <li><a href="#contributing">Contributing</a></li>
@@ -77,42 +70,40 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started:
-**To avoid retyping too much info. Do a search and replace with your text editor for the following:**
-`43app`, `43corr`, `twitter_handle`, `h.coutaud@outlook.fr`, `43corr`, `43 gets you started fast, straight to the execution of your code and the edition of main files thanks to its simple and elegant embedded command line.`
-
-
-
-<!-- GETTING STARTED -->
-## Getting Started
-
-To get a local copy up and running follow these simple steps.
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 1. Clone the repo from the intra
 ![Alt text](/pics/gitrepo.png?raw=true "Git repo in intra")
+- Example : 
 ```sh
-git clone git@vogsphere-v2.42lyon.fr:vogsphere/intra-uuid-fddf8cda
-git clone https://github.com/43app/43corr.git
+git clone git@vogsphere-v2.42lyon.fr:vogsphere/intra-uuid-some-numbers correction
 ```
 
 2. Clone this repo <strong>IN</strong> the folder where all the exercises are
 ```sh
+cd correction
 git clone https://github.com/43app/43corr.git
 ```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
+3. Launch the program `43corr.sh`, with a valid subject (_see `-h` option for more info_)
+```sh
+./43corr.sh c03
+```
 
+4. **Enjoy**
 
+_To see a detailed version of the features of this program, see <a href="#features">Features</q>_
 
 <!-- ROADMAP -->
 ## Roadmap
 
 See the [open issues](https://github.com/43app/43corr/issues) for a list of proposed features (and known issues).
+
+
+
+## Features
 
 
 
