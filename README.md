@@ -55,7 +55,7 @@
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-1. Clone the repo from the intra
+1. Clone the repo from the 42 intra
 ![Alt text](/pics/gitrepo.png?raw=true "Git repo in intra")
 - Example : 
 ```sh
