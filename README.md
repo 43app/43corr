@@ -28,7 +28,7 @@
     <img src="/pics/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">43corr</h3>
+  <h3 align="center">43corr - Evaluate your 42 projects</h3>
 
   <p align="center">
     43 gets you started fast, straight to the execution of your code and the edition of main files thanks to its simple and elegant embedded command line.
