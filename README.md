@@ -91,6 +91,8 @@ See the [open issues](https://github.com/43app/43corr/issues) for a list of prop
 
 ## Features
 
+_Has yet to be filled ;D_
+
 
 
 <!-- CONTRIBUTING -->
