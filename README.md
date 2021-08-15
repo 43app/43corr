@@ -33,7 +33,6 @@
   <p align="center">
     43 gets you started fast, straight to the execution of your code and the edition of your files thanks to its simple and elegant embedded command line.
     <br />
-
   </p>
 </p>
 
@@ -85,9 +84,13 @@ git clone https://github.com/43app/43corr.git
 ```
 
 4. **Enjoy**
+
 ![Alt text](/pics/programcli.png?raw=true "The command line of the program")
 
+
 _To see a detailed version of the features of this program, see <a href="#features">Features</q>_
+
+
 
 <!-- ROADMAP -->
 ## Roadmap
