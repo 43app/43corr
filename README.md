@@ -89,27 +89,24 @@ Here's a blank template to get started:
 To get a local copy up and running follow these simple steps.
 
 
-### Installation
-
-1. Clone the repo <strong>IN</strong> the folder where all the exercises are
-   ```sh
-   git clone https://github.com/43app/43corr.git
-   ```
-
-
 
 <!-- USAGE EXAMPLES -->
 ## Usage
 
 1. Clone the repo from the intra
 ![Alt text](/pics/gitrepo.png?raw=true "Git repo in intra")
+```sh
+git clone https://github.com/43app/43corr.git
+git clone git@vogsphere-v2.42lyon.fr:vogsphere/intra-uuid-fddf8cda
+```
 
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-1. Clone the repo <strong>IN</strong> the folder where all the exercises are
+2. Clone this repo <strong>IN</strong> the folder where all the exercises are
 ```sh
 git clone https://github.com/43app/43corr.git
 ```
+
+_For more examples, please refer to the [Documentation](https://example.com)_
+
 
 
 <!-- ROADMAP -->
