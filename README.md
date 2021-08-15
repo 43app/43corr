@@ -36,7 +36,7 @@
   </p>
 </p>
 
-![Alt text](/pics/programpic.png?raw=true "A picture of the program")
+
 
 <!-- TABLE OF CONTENTS -->
 <details open="open">
@@ -47,6 +47,7 @@
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#license">License</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><a href="#screenshots">Screenshots</a></li>
   </ol>
 </details>
 
@@ -119,17 +120,6 @@ Project Link: [https://github.com/43app/43corr](https://github.com/43app/43corr)
 
 
 
-<!-- ACKNOWLEDGEMENTS -->
-<!-- ## Acknowledgements
+## Screenshots
 
-* []()
-* []()
-* []()
-
--->
-
-
-
-<!-- MARKDOWN LINKS & IMAGES -->
-<!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-
+![Alt text](/pics/programpic.png?raw=true "A picture of the program")
