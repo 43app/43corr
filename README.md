@@ -41,14 +41,7 @@
   <p align="center">
     43 gets you started fast, straight to the execution of your code and the edition of main files thanks to its simple and elegant embedded command line.
     <br />
-    <a href="https://github.com/43app/43corr"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/43app/43corr">View Demo</a>
-    ·
-    <a href="https://github.com/43app/43corr/issues">Report Bug</a>
-    ·
-    <a href="https://github.com/43app/43corr/issues">Request Feature</a>
+
   </p>
 </p>
 
