@@ -25,7 +25,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/43app/43corr">
-    <img src="/pics/logo.png" alt="Logo" width="80" height="80">
+    <img src="/pics/logo.jpg" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">43corr</h3>
