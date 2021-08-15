@@ -96,8 +96,8 @@ To get a local copy up and running follow these simple steps.
 1. Clone the repo from the intra
 ![Alt text](/pics/gitrepo.png?raw=true "Git repo in intra")
 ```sh
-git clone https://github.com/43app/43corr.git
 git clone git@vogsphere-v2.42lyon.fr:vogsphere/intra-uuid-fddf8cda
+git clone https://github.com/43app/43corr.git
 ```
 
 2. Clone this repo <strong>IN</strong> the folder where all the exercises are
