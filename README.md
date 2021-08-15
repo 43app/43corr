@@ -101,10 +101,15 @@ To get a local copy up and running follow these simple steps.
 <!-- USAGE EXAMPLES -->
 ## Usage
 
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
+1. Clone the repo from the intra
+![Alt text](/pics/gitrepo.png?raw=true "Git repo in intra")
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
+1. Clone the repo <strong>IN</strong> the folder where all the exercises are
+```sh
+git clone https://github.com/43app/43corr.git
+```
 
 
 <!-- ROADMAP -->
