@@ -91,7 +91,7 @@ To get a local copy up and running follow these simple steps.
 
 ### Installation
 
-1. Clone the repo
+1. Clone the repo <strong>IN</strong> the folder where all the exercises are
    ```sh
    git clone https://github.com/43app/43corr.git
    ```
