@@ -78,7 +78,7 @@ cd 43corr
 
 ![Alt text](/pics/programcli.png?raw=true "The command line of the program")
 
-
+_Note that you are prompted by default on the first exercise (ex00 for example)_
 _To see a detailed version of the features of this program, see <a href="#features">Features</a>_
 
 
@@ -93,7 +93,39 @@ See the [open issues](https://github.com/43app/43corr/issues) for a list of prop
 ## Features
 
 ### Sets of commands :
-_**_
+
+`c` or `compile` :
+    Compiles your .c file with `gcc -Wall -Werror -Wextra`
+
+`ef` or `edit_file` :
+    Opens a `vim` window on your `ft_some_funtion.c` file to edit it
+    _You may then close the window with `:wq` to go back to the prompt of the program_
+
+`e` or `edit_main` :
+    Opens a `vim` window on the `main.c` file to edit it
+    _You may then close the window with `:wq` to go back to the prompt of the program_
+
+`h` or `help` :
+    Prints the complete set of available commands in the prompt area
+
+`l` or `log_compile` :
+    Opens a `vim` window on the `main.c` file to edit it
+    _You may then close the window with `:wq` to go back to the prompt of the program_
+
+`n` or `next` :
+    Next exercise become the current one
+    _You can see the file you are working on before the prompt (`ex01 >>` for example)_
+
+`p` or `prev` :
+    Previous exercise become the current one
+    _You can see the file you are working on before the prompt (`ex01 >>` for example)_
+
+`q` or `quit` :
+    Quit the program
+
+`r` or `run` :
+    Runs your program
+    _This command still only works for files compiled with the `c` command, and do not take arguments yet (working on it...)_
 
 
 
