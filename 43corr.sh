@@ -15,7 +15,7 @@
 lang="fr"
 
 # Availability of subjects
-subjects=("c03 c04")
+subjects=("c00 c01 c02 c03 c04 c05 c06")
 
 # Essential constants
 adminlogin="hcoutaud"

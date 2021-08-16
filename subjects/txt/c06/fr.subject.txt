@@ -1,0 +1,256 @@
+Piscine C
+C 06
+Staff 42 pedago@42.fr
+
+Résumé: Ce document est le sujet du module C 06 de la piscine C de 42.
+
+Table des matières
+I
+
+Consignes
+
+2
+
+II
+
+Préambule
+
+4
+
+III
+
+Exercice 00 : ft_print_program_name
+
+5
+
+IV
+
+Exercice 01 : ft_print_params
+
+6
+
+V
+
+Exercice 02 : ft_rev_params
+
+7
+
+VI
+
+Exercice 03 : ft_sort_params
+
+8
+
+1
+
+Chapitre I
+Consignes
+• Seule cette page servira de référence : ne vous fiez pas aux bruits de couloir.
+• Relisez bien le sujet avant de rendre vos exercices. A tout moment le sujet peut
+changer.
+• Attention aux droits de vos fichiers et de vos répertoires.
+• Vous devez suivre la procédure de rendu pour tous vos exercices.
+• Vos exercices seront corrigés par vos camarades de piscine.
+• En plus de vos camarades, vous serez corrigés par un programme appelé la Moulinette.
+• La Moulinette est très stricte dans sa notation. Elle est totalement automatisée. Il
+est impossible de discuter de sa note avec elle. Soyez d’une rigueur irréprochable
+pour éviter les surprises.
+• La Moulinette n’est pas très ouverte d’esprit. Elle ne cherche pas à comprendre le
+code qui ne respecte pas la Norme. La Moulinette utilise le programme norminette
+pour vérifier la norme de vos fichiers. Comprendre par là qu’il est stupide de rendre
+un code qui ne passe pas la norminette.
+• Les exercices sont très précisément ordonnés du plus simple au plus complexe.
+En aucun cas nous ne porterons attention ni ne prendrons en compte un exercice
+complexe si un exercice plus simple n’est pas parfaitement réussi.
+• L’utilisation d’une fonction interdite est un cas de triche. Toute triche est sanctionnée par la note de -42.
+• Vous ne devrez rendre une fonction main() que si nous vous demandons un programme.
+• La Moulinette compile avec les flags -Wall -Wextra -Werror, et utilise gcc.
+• Si votre programme ne compile pas, vous aurez 0.
+• Vous ne devez laisser dans votre répertoire aucun autre fichier que ceux explicitement specifiés par les énoncés des exercices.
+• Vous avez une question ? Demandez à votre voisin de droite. Sinon, essayez avec
+2
+
+Piscine C
+
+C 06
+
+votre voisin de gauche.
+• Votre manuel de référence s’appelle Google / man / Internet / ....
+• Pensez à discuter sur le forum Piscine de votre Intra, ainsi que sur le slack de votre
+Piscine !
+• Lisez attentivement les exemples. Ils pourraient bien requérir des choses qui ne
+sont pas autrement précisées dans le sujet...
+• Réfléchissez. Par pitié, par Odin ! Nom d’une pipe.
+
+Pour cette journée, la norminette doit être lancée avec le flag -R
+CheckForbiddenSourceHeader. La moulinette l’utilisera aussi.
+
+3
+
+Chapitre II
+Préambule
+Dialogue issue du film The Big Lebowski :
+Walter
+Smokey
+Walter
+Smokey
+Walter
+
+:
+:
+:
+:
+:
+
+Le Duc :
+Walter :
+Smokey
+Walter
+Smokey
+Walter
+
+:
+:
+:
+:
+
+Le Duc
+Walter
+Smokey
+Walter
+Smokey
+Walter
+
+:
+:
+:
+:
+:
+:
+
+Le Duc
+Walter
+Le Duc
+Smokey
+Le Duc
+Walter
+
+:
+:
+:
+:
+:
+:
+
+Smokey :
+Walter :
+
+Excuse-moi Smokey, t’as mordu la ligne : y’a faute.
+Mon cul ! Tu me mets huit, Duc...
+Je te demande pardon, mets lui zéro, jeu suivant.
+Tu fais chier Walter, tu me mets huit Duc...
+Smokey on est pas au Viet-nâm, on est au bowling, on joue
+selon les règles...
+Allez, déconne pas Walter, on est là merde : son pied a légèrement
+mordu, il a un peu glissé... C’est qu’un sport, là !
+Oui. Et il est homologué, c’est une partie qui compte pour le tournoi,
+j’ai pas raison ?
+Ouais, mais j’ai pas...
+J’ai pas raison ?
+Ouais, mais j’ai pas mordu... Allez ! Vas-y Duc, mets moi un huit.
+[Sort son flingue] Smokey mon ami, si t’as jamais souffert,
+tu vas comprendre...
+Walter, fais pas le con !
+[Menaçant] Vas-y, mets-toi un huit et tu vas comprendre !
+J’ai pas m...
+Tu vas comprendre ta douleur, Smokey !
+Duc ? C’est ton partenaire...
+Le monde est en train de DEVENIR CINGLÉ ! [Se lève] Y’A PERSONNE ICI À
+PART MOI QUI SE SOUCIE ENCORE DE RESPECTER LES RÈGLES ? METS-TOI ZÉRO !
+Ils sont en train d’appeler les flics Walter remets ça dans...
+[Braque son flingue sur Smokey] METS-TOI ZÉRO !
+Range ca Walter...
+...
+Walter...
+[Arme son flingue] TU CROIS PEUT-ÊTRE QUE JE PLAISANTE ?
+METS-TOI ZÉRO!
+Voila, je me suis mis zéro... T’es content ? Espèce de malade !
+[Se calme] ... C’est un sport homologué.
+
+4
+
+Chapitre III
+Exercice 00 :
+ft_print_program_name
+Exercice : 00
+ft_print_program_name
+Dossier de rendu : ex00/
+Fichiers à rendre : ft_print_program_name.c
+Fonctions Autorisées : write
+
+• Il s’agit ici d’un programme, vous devrez donc avoir une fonction main dans votre
+fichier.c.
+• Écrire un programme qui affiche le nom du programme.
+• Exemple :
+$>./a.out
+./a.out
+$>
+
+5
+
+Chapitre IV
+Exercice 01 : ft_print_params
+Exercice : 01
+ft_print_params
+Dossier de rendu : ex01/
+Fichiers à rendre : ft_print_params.c
+Fonctions Autorisées : write
+
+• Il s’agit ici d’un programme, vous devrez donc avoir une fonction main dans votre
+fichier.c.
+• Écrire un programme qui affiche les arguments reçus en ligne de commande.
+• Un par ligne dans le même ordre que la ligne de commande
+• Vous devez afficher tous les arguments, sauf argv[0].
+• Exemple :
+$>./a.out test1 test2 test3
+test1
+test2
+test3
+$>
+
+6
+
+Chapitre V
+Exercice 02 : ft_rev_params
+Exercice : 02
+ft_rev_params
+Dossier de rendu : ex02/
+Fichiers à rendre : ft_rev_params.c
+Fonctions Autorisées : write
+
+• Il s’agit ici d’un programme, vous devrez donc avoir une fonction main dans votre
+fichier.c.
+• Écrire un programme qui affiche les arguments reçus en ligne de commande.
+• Un par ligne dans l’ordre inverse de la ligne de commande.
+• Vous devez afficher tous les arguments, sauf argv[0].
+
+7
+
+Chapitre VI
+Exercice 03 : ft_sort_params
+Exercice : 03
+ft_sort_params
+Dossier de rendu : ex03/
+Fichiers à rendre : ft_sort_params.c
+Fonctions Autorisées : write
+
+• Il s’agit ici d’un programme, vous devrez donc avoir une fonction main dans votre
+fichier.c.
+• Écrire un programme qui affiche les arguments reçus en ligne de commande triés
+par ordre ascii.
+• Vous devez afficher tous les arguments, sauf argv[0].
+• Un argument par ligne.
+
+8
+
+
