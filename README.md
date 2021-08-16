@@ -65,11 +65,12 @@ git clone git@vogsphere-v2.42lyon.fr:vogsphere/intra-uuid-some-numbers correctio
 2. Clone this repo <strong>IN</strong> the folder where all the exercises are
 ```sh
 cd correction
-git clone https://github.com/43app/43corr.git
+git clone https://github.com/43app/43corr.git 43corr
 ```
 
-3. Launch the program `43corr.sh`, with a valid subject (_see `-h` option for more info_)
+3. Launch the program `43corr.sh` from the folder you imported, with a valid subject (_see `-h` option for more info_)
 ```sh
+cd 43corr
 ./43corr.sh c03
 ```
 
@@ -91,7 +92,8 @@ See the [open issues](https://github.com/43app/43corr/issues) for a list of prop
 
 ## Features
 
-_Has yet to be filled ;D_
+### Sets of commands :
+_**_
 
 
 
